@@ -1,0 +1,17 @@
+<div class="row" style="">
+  <div class="col s12 m6">
+    <div class="card cyan lighten-4">
+      <div class="card-content blue-grey-text">
+        <span class="card-title"><%= article.title %></span>
+        <p><%= article.content %></p>
+      </div>
+      <div class="card-action">
+        <%= link_to 'Show', article %></td>
+      <% if user_signed_in? && current_user.id == article.user.id %>
+        <%= link_to 'Edit', edit_article_path(article) %>
+        <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</div>
