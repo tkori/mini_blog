@@ -4,12 +4,15 @@
 
 #notice {
   text-align: center;
+  color: green;
 }
 
 #error_explanation {
+  color: red;
   margin: 0 auto;
 }
 
 #error_explanation > ul > li {
+  text-align: center;
   list-style: none;
 }
