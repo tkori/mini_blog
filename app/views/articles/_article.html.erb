@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col s6 offset-s3">
+    <div class="card cyan lighten-4">
+      <div class="card-content blue-grey-text">
+        <span class="card-title"><%= article.title %></span>
+        <p><%= article.content %></p>
+      </div>
+      <div class="card-action">
+        <%= link_to '詳細', article %></td>
+        <% if user_signed_in? && current_user.id == article.user.id %>
+          <%= link_to '編集', edit_article_path(article) %>
+          <%= link_to '削除', article, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

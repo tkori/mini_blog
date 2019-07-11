@@ -1,0 +1,32 @@
+<div class="form">
+  <div class="row">
+    <div class="col s6 offset-s3">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+      <div class="field">
+        <%= f.label :name, '名前' %>
+        <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :email, 'メールアドレス' %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "materialize-textarea" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password, 'パスワード' %>
+        <%= f.password_field :password, autocomplete: "new-password", class: "materialize-textarea" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password_confirmation, 'パスワード（確認）' %>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "materialize-textarea" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "サインアップ", class: "waves-effect waves-light btn cyan" %>
+      </div>
+    <% end %>
+    </div>
+  </div>
+</div>

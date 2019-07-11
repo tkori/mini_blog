@@ -1,0 +1,26 @@
+<div class="form">
+  <%= form_with(model: article, local: true) do |form| %>
+    <% if article.errors.any? %>
+      <div id="error_explanation">
+        <p><%= pluralize(article.errors.count, "error") %> prohibited this article from being saved:</p>
+
+        <ul>
+        <% article.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= form.label :title, 'タイトル' %>
+      <%= form.text_area :title, class: "materialize-textarea" %>
+      <%= form.label :content, '内容' %>
+      <%= form.text_area :content, class: "materialize-textarea" %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit '投稿', class: "waves-effect waves-light btn cyan" %>
+    </div>
+  <% end %>
+</div>
